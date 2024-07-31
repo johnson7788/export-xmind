@@ -1,6 +1,5 @@
-import MindElixir, { E } from 'mind-elixir'
-import { exportSvg, exportPng } from 'mind-elixir/dist/painter'
-import example from 'mind-elixir/dist/example1'
+import MindElixir from 'mind-elixir'
+import example from 'mind-elixir/example'
 
 import exportXmind, { data2Xmind } from './index'
 // import exportXmind from '@mind-elixir/export-xmind'
@@ -63,7 +62,7 @@ function sleep() {
     setTimeout(() => res(), 1000)
   })
 }
-console.log('test E function', E('bd4313fbac40284b'))
+console.log('test E function', MindElixir.E('bd4313fbac40284b'))
 window.currentOperation = null
 mind.bus.addListener('operation', (operation) => {
   console.log(operation)
@@ -88,6 +87,6 @@ mind.bus.addListener('expandNode', (node) => {
 window.m = mind
 window.M = MindElixir
 window.E = MindElixir.E
-window.exportSvg = exportSvg
-window.exportPng = exportPng
+window.exportSvg = MindElixir.exportSvg
+window.exportPng = MindElixir.exportPng
 window.data2Xmind = data2Xmind

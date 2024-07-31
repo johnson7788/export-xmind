@@ -21,10 +21,10 @@
   "devDependencies": {
     "file-saver": "^2.0.5",
     "jszip": "^3.10.0",
+    "mind-elixir": "^4.0.5",
     "vite": "^3.0.0"
   },
   "peerDependencies": {
-    "mind-elixir": "^2.0.0 || ^3.0.0",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.0"
   }
