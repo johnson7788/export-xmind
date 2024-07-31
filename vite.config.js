@@ -1,10 +1,10 @@
-import { resolve } from 'path'
-import { defineConfig } from 'vite'
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, 'index.js'),
+      entry: resolve(__dirname, 'index.js'), // 如果 __dirname 不可用，可以尝试使用 new URL() 替代
       name: '@mind-elixir/export-xmind',
       // the proper extensions will be added
       fileName: 'export-xmind',
@@ -14,12 +14,13 @@ export default defineConfig({
       // into your library
       external: ['file-saver', 'jszip'],
       output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
+        exports: 'named', // 如果你决定只使用命名导出
         globals: {
-          vue: 'JSZip',
+          'file-saver': 'fileSaver',
+          'jszip': 'JSZip',
         },
       },
     },
   },
-})
+});
+
